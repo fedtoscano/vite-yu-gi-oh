@@ -1,7 +1,7 @@
 <script>
 import CardList from "./cardComponents/CardList.vue";
 import axios from  "axios";
-import store from "../store.js"
+import {store} from "../store.js"
 
 export default {
 components:{
@@ -9,6 +9,8 @@ components:{
 },
 data() {
 return {  
+    store,
+    
 }
 },
 methods: {

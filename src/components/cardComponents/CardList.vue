@@ -1,6 +1,6 @@
 <script>
 import SingleCard from "./SingleCard.vue";
-import store from "../../store.js"
+import {store} from "../../store.js"
 
 export default {
 components:{
