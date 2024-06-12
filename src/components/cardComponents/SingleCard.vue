@@ -15,7 +15,7 @@ return {
         </div>
         <div class="text-container">
             <p>{{ card.name }}</p>
-            <p></p>
+            <p>{{ card.archetype }}</p>
         </div>
     </article>
 </template>
@@ -24,6 +24,7 @@ return {
 @use "../../style/partials/variables" as *;
 
 article{
+    border: 1px solid white;
     margin-bottom: 1rem;
     background-color: $orange;
     display: flex;
@@ -37,10 +38,14 @@ article{
             }
     }
     .text-container{
+        text-align: center;
         padding: 1rem;
         text-transform: uppercase;
         color: white;
         font-weight: 400;
+        p{
+            margin-bottom: .5em;
+        }
     }
 }
 </style>
