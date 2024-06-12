@@ -1,11 +1,14 @@
 <script>
 import SingleCard from "./SingleCard.vue";
+import store from "../../store.js"
+
 export default {
 components:{
     SingleCard
 },
 data() {
-return {  
+return {
+    store
 }
 }}
 </script>
