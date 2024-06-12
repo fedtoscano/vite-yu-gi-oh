@@ -7,7 +7,13 @@ components:{
 },
 data() {
 return {  
+    cards:[]
 }
+},
+methods: {
+    getCards: function(){
+        
+    }
 }}
 </script>
 

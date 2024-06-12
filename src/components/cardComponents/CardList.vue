@@ -12,8 +12,16 @@ return {
 
 <template>
     <h1>ciao da CardList</h1>
-    <SingleCard/>
+    <div class="container">
+
+        <SingleCard/>
+    </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.container{
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 </style>
