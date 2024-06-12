@@ -17,7 +17,7 @@ methods: {
     getCards: function(){
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0')
             .then((response) => {
-                // handle success
+                // console.log(response)
                 store.cards = response.data.data
                 console.log(store.cards);
             })
@@ -38,9 +38,7 @@ created(){
 
 <template>
     <div class="container">
-        <h1>ciao dal main App</h1>
         <CardList/>
-
     </div>
 </template>
 
@@ -49,6 +47,7 @@ created(){
 
 .container{
     background-color: $orange;
+    padding: 2rem;
 }
 
 </style>
