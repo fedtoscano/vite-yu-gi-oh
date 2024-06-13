@@ -32,6 +32,26 @@ methods: {
             this.getCards(),
             this.isLoaded=true
         },3000)
+    },
+    researchByArchetype: function(archetype){
+        console.log(archetype)
+        // ! perché non funziona la chiamata api?
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+            params: {
+            archetype: archetype
+            }
+        })
+        .then((response) => {
+            store.cards = response.data.data
+            console.log(response);
+            console.log(store.cards)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        .finally(function () {
+            // always executed
+        });  
     }
 
 },
@@ -44,7 +64,7 @@ created(){
 
 <template>
     <div class="container" v-if="isLoaded">
-        <MainSelect/>
+        <MainSelect @gotArchetype="researchByArchetype"/>
         <CardList/>
     </div>
     <div class="loader-container" v-else>

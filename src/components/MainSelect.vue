@@ -16,7 +16,7 @@ methods:{
         .then((response) => {
             // handle success
             this.archetypeList = response.data
-            console.log(this.archetypeList);
+            // console.log(this.archetypeList);
         })
         .catch(function (error) {
             // handle error
@@ -27,8 +27,15 @@ methods:{
         });
     },
 
+    clearArchetype: function(input){
+        this.selectedArchetype=""
+    },
+
     selectArchetype: function(){
-        console.log(this.selectedArchetype)
+        // console.log(this.selectedArchetype)
+        this.$emit("gotArchetype", this.selectedArchetype)
+        this.clearArchetype();
+        
         // console.log("ciaooo")
     }
 },
