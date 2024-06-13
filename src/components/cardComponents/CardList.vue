@@ -15,7 +15,12 @@ return {
 
 <template>
     <div class="container">
-        <SingleCard/>
+        <!-- !modificare con v-for (tramite props a SingleCard) -->
+        <SingleCard v-for="card in store.cards"
+            :cardId="card.id"
+            :cardName="card.name" 
+            :cardImage="card.card_images[0].image_url"
+            :cardArchetype="card.archetype" />
     </div>
 </template>
 

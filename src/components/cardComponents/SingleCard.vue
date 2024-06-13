@@ -1,6 +1,24 @@
 <script>
 import {store} from "../../store.js";
 export default {
+    props:{
+        cardId: {
+            type: String,
+            required: true
+        },
+        cardName: {
+            type: String,
+            required: true
+        },
+        cardImage: {
+            type: String,
+            required: true
+        },
+        cardArchetype: {
+            type: String,
+            required: true
+        }
+    },
 data() {
 return {
     store
@@ -9,13 +27,13 @@ return {
 </script>
 
 <template>
-    <article v-for="card in store.cards" :key="card.id">
+    <article>
         <div class="image-container">
-            <img :src="card.card_images[0].image_url" alt="">
+            <img :src="cardImage" alt="">
         </div>
         <div class="text-container">
-            <p>{{ card.name }}</p>
-            <p>{{ card.archetype }}</p>
+            <p>{{ cardName }}</p>
+            <p>{{ cardArchetype }}</p>
         </div>
     </article>
 </template>
