@@ -1,11 +1,14 @@
 <script>
 import CardList from "./cardComponents/CardList.vue";
+import MainSelect from "./MainSelect.vue";
 import axios from  "axios";
 import {store} from "../store.js"
 
 export default {
 components:{
     CardList,
+    MainSelect,
+
 },
 data() {
 return {  
@@ -18,16 +21,11 @@ methods: {
     getCards: function(){
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0')
             .then((response) => {
-                // console.log(response)
                 store.cards = response.data.data
-                console.log(store.cards);
             })
             .catch(function (error) {
                 console.log(error);
             })
-            .finally(function () {
-                // always executed
-            });
     },
     delayLoading: function(){
         setTimeout(()=>{
@@ -46,6 +44,7 @@ created(){
 
 <template>
     <div class="container" v-if="isLoaded">
+        <MainSelect/>
         <CardList/>
     </div>
     <div class="loader-container" v-else>

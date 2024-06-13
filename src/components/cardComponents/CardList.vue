@@ -15,7 +15,6 @@ return {
 
 <template>
     <div class="container">
-        <!-- !modificare con v-for (tramite props a SingleCard) -->
         <SingleCard v-for="card in store.cards"
             :cardId="card.id"
             :cardName="card.name" 

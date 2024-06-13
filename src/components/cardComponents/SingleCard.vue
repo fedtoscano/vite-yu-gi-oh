@@ -2,22 +2,9 @@
 import {store} from "../../store.js";
 export default {
     props:{
-        cardId: {
-            type: String,
-            required: true
-        },
-        cardName: {
-            type: String,
-            required: true
-        },
-        cardImage: {
-            type: String,
-            required: true
-        },
-        cardArchetype: {
-            type: String,
-            required: true
-        }
+        cardName: String,
+        cardImage: String,
+        cardArchetype: String,
     },
 data() {
 return {
