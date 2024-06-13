@@ -63,8 +63,8 @@ created(){
 
 <style scoped>
 .container{
-    display: flex;
-    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
     align-items: end;
     label{
         margin-bottom: 1em;
