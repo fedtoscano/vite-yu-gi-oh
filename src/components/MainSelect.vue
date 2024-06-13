@@ -34,7 +34,7 @@ methods:{
     selectArchetype: function(){
         // console.log(this.selectedArchetype)
         this.$emit("gotArchetype", this.selectedArchetype)
-        this.clearArchetype();
+        // this.clearArchetype();
         
         // console.log("ciaooo")
     }
@@ -50,14 +50,14 @@ created(){
         <select name="archetype-selector" id="archetype-selector" v-model="selectedArchetype" @change="selectArchetype">
             <option v-for="(archetype, index) in archetypeList" 
                 :key="index" 
-                :value="archetype.archetype_name"
-                
-                >
-
+                :value="archetype.archetype_name">
                 {{ archetype.archetype_name }}
-
             </option>
         </select>
+        <p v-if="store.numberOfCards!==0">You found: 
+            <span v-if="store.numberOfCards===1"> {{ store.numberOfCards }} result </span>
+            <span v-else-if="store.numberOfCards>1"> {{ store.numberOfCards }} results</span>
+        </p>
     </div>
 </template>
 
@@ -66,5 +66,11 @@ created(){
     display: flex;
     flex-direction: column;
     align-items: end;
+    label{
+        margin-bottom: 1em;
+    }
+    p{
+        margin-top: 1em;
+    }
 }
 </style>

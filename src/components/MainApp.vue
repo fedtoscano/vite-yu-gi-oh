@@ -43,8 +43,9 @@ methods: {
         })
         .then((response) => {
             store.cards = response.data.data
-            console.log(response);
-            console.log(store.cards)
+            store.numberOfCards= store.cards.length
+            // console.log(response);
+            // console.log(store.cards)
         })
         .catch(error => {
             console.log(error)
